@@ -8,11 +8,13 @@ import { MaterialModule } from './material.module';
 import { AddUserComponent } from './add-user/add-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddUserComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

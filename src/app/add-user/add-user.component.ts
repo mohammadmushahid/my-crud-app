@@ -33,6 +33,7 @@ export class AddUserComponent implements OnInit {
     this.service.userupate( this.data.id , this.userform.value).subscribe({
       next:((res)=>{
         console.log(res)
+
         this.matdialogueref.close()
       }),
       error:((error)=>{
@@ -44,6 +45,7 @@ export class AddUserComponent implements OnInit {
     this.service.addUser(this.userform.value).subscribe({
       next:((res)=>{
         console.log(res)
+        localStorage.setItem('formdata', JSON.stringify(this.userform.value))
         this.matdialogueref.close()
       }),
       error:((error)=>{

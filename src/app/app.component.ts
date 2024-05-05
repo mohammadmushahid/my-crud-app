@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   title = 'angular-crud-app';
   data: any;
+  ayan: any;
 
   ngOnInit(): void {
     this.getUser();
@@ -45,7 +46,12 @@ export class AppComponent implements OnInit {
   getUser() {
     this.service.getUser().subscribe({
       next: ((res) => {
-        console.log(res)
+        const mushahid: any = localStorage.getItem('formdata')
+        let naved = JSON.parse(mushahid)
+        this.ayan = naved
+
+        console.log("==>eeee",this.ayan)
+        // console.log(res)
         this.dataSource = new MatTableDataSource(res)
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;

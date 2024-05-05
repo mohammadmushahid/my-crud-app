@@ -1,0 +1,64 @@
+<div class="container">
+    <form [formGroup]="testForm" (ngSubmit)="submitForm()">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="my-4">
+                    <input type="text" formControlName="name" class="form-control w-75" placeholder="Enter Name">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="my-4">
+                    <input type="text" formControlName="mail" class="form-control w-75" placeholder="Enter Email">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="my-4">
+                    <input type="text" formControlName="mobile" class="form-control w-75" placeholder="Enter Mobile">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="my-4">
+                    <input type="password" formControlName="password" class="form-control w-75"
+                        placeholder="Enter Passsword">
+                </div>
+            </div>
+            <div class="button">
+                <button type="submit" class="btn btn-success">Submit</button>
+                <button (click)="removedata()" class="btn btn-success">Remove Data</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="container">
+    <div style="background-color: black; color: white;" class="mt-4">
+        <ul *ngFor="let data of myArray">
+            <li>{{data.name}}</li>
+            <li>{{data.mail}}</li>
+            <li>{{data.mobile}}</li>
+            <li>{{data.password}}</li>
+        </ul>
+    </div>
+</div>
+
+<div class="w-25 ms-5">
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+        <button (click)="malik('mushahid', 'https://t4.ftcdn.net/jpg/02/14/74/61/360_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg')" mat-menu-item>Mushahid</button>
+        <!-- <button (click)="malik('Naved')" mat-menu-item>Naved</button> -->
+    </mat-menu>
+
+</div>
+
+<h2 class="text-center">{{myname}}</h2>
+<div class="container text-center mt-5">
+    <img width="300px" src="{{imageurl}}" alt="">
+</div>
+
+<div class="text-center w-25">
+    <input type="text" class="form-control" #val>
+    <button class="btn btn-success" (click)="imgnot(val)">show me</button>
+    <img width="200px" class="text-center" src="{{imgmust}}" alt="">
+</div>
+
